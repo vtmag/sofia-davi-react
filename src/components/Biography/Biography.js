@@ -6,6 +6,10 @@ const Biography = () => {
     servicesSection.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const downloadCV = () => {
+   
+  };
+
   return (
 
     <>
@@ -14,8 +18,8 @@ const Biography = () => {
             <div className="bio-content">
                 <div className="text-content">
                     <h2>Ψυχολόγος - Ψυχοθεραπεύτρια</h2>
+                    <h3>MSc Κλινική Ψυχική Υγεία, ΑΠΘ</h3>
                     
-                    <h3>Λίγα λόγια για μένα...</h3>
                     <p>Γεννήθηκα και μεγάλωσα στη Θεσσαλονίκη, όπου και αποφοίτησα από το Τμήμα Ψυχολογίας του Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης το 2021. Η διπλωματική μου εργασία,
                          εστίαζε στις διαφορές φύλου στις αναμνήσεις αναλαμπής από την πανδημία COVID-19 στην Ελλάδα.</p>
 
@@ -29,10 +33,10 @@ const Biography = () => {
                     <p>Στο πλαίσιο της επαγγελματικής μου πορείας, εργάζομαι στην μοναδα φροντίδας ηλικιωμένων <a id='a' href='https://protipagirokomia.gr/' target="_blank">ΠΡΟΤΥΠΑ ΓΗΡΟΚΟΜΕΙΑ ΠΑΝΟΡΑΜΑ</a>.
                          Ξεκίνησα την επαγγελματική μου σταδιοδρομία ως εθελόντρια ψυχολόγος στην <a id='a' href='https://www.alzheimer-hellas.gr/index.php/el/' target="_blank">Ελληνική Εταιρεία Νόσου Alzheimer και Συγγενών Διαταραχών</a>.
                          </p>
-                         <div class="download-cv">
-                            <button class="download-button" onclick="downloadCV()">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 4.5-15 15m0 0h11.25m-11.25 0V8.25" />
+                         <div className="download-cv">
+                            <button className="download-button" onClick={downloadCV()}>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="icon">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 4.5-15 15m0 0h11.25m-11.25 0V8.25" />
                                 </svg>
                                 Κατεβάστε το CV
                             </button>

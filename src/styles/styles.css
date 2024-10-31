@@ -12,6 +12,7 @@ body {
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    overscroll-behavior-y: none;
   }
 
   button, a {
@@ -137,6 +138,19 @@ a {
     
 }
 
+  
+  /* Arrow on top of dropdown */
+  .header .dropdown-content::before {
+    content: "";
+    position: absolute;
+    top: -10px; /* Adjusts the arrow to be above the dropdown */
+    left: 70px; /* Centers the arrow under "Υπηρεσίες"; adjust as needed */
+    border-width: 0 8px 10px 8px;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+  }
+  
+
 .navbar ul.active {
     display: flex; /* This should be here to activate the menu */
 }
@@ -152,7 +166,7 @@ a {
 .navbar ul li a:hover {
     color: #373636;
     transform: translateX(5px);
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.4s  ease-in-out;;
 }
 
 .main-heading {
@@ -1083,14 +1097,21 @@ footer p{
 .nav-links a {
   color: #333; /* Default color */
   transition: color 0.3s ease;
+  
 }
 
-.nav-links a.active {
-  color: #0077b5; /* Highlight color for active section */
+/* Hover and active state for "Υπηρεσίες" when submenu is open */
+.nav-links .dropdown.active > a,
+.nav-links .dropdown:hover > a {
+  color: #333; /* Active color for hover and open state */
+  transform: translateX(5px);
+  
 }
+
 
 .sticky-header .nav-links a.active {
-  color: #9b9b9b; /* Ensure consistency in sticky header */
+  color: #7a7953; /* Ensure consistency in sticky header */
+  
 }
 
 .bio-card {

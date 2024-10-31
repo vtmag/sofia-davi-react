@@ -1,61 +1,69 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom'; // Χρήση useNavigate και useLocation
+import { useNavigate, useLocation } from 'react-router-dom';
 import { scroller } from 'react-scroll';
 import BurgerMenu from '../BurgerMenu';
 
-// Ορισμός σταθερών για duration και offset
-const DURATION = 100; // σε milliseconds, για τη διάρκεια του scroll
-const OFFSET = -50; // σε pixels, για το offset από την κορυφή της σελίδας
+const DURATION = 100;
+const OFFSET = -50;
+
+const sections = [
+  { id: 'arxikh', label: 'Αρχική' },
+  { id: 'services', label: 'Υπηρεσίες' },
+  { id: 'biography', label: 'Βιογραφικό' },
+  { id: 'faq', label: 'FAQ' },
+  { id: 'contact', label: 'Επικοινωνία' },
+  { id: 'booking', label: 'Ραντεβού' },
+];
 
 const Header = () => {
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
-  const [targetSection, setTargetSection] = useState(null); // Στοχευμένο section
+  const [activeSection, setActiveSection] = useState('arxikh');
   const navigate = useNavigate();
   const location = useLocation();
-  
+  const [isSubmenuOpen, setIsSubmenuOpen] = useState(false); 
 
-  const toggleBurgerMenu = () => {
-    setIsBurgerOpen(!isBurgerOpen);
-  };
+  const toggleBurgerMenu = () => setIsBurgerOpen(!isBurgerOpen);
 
   useEffect(() => {
     const handleScroll = () => {
       const mainHeaderHeight = document.querySelector('.header').offsetHeight;
-      if (window.scrollY > mainHeaderHeight) {
-        setIsSticky(true);
-      } else {
-        setIsSticky(false);
-      }
+      setIsSticky(window.scrollY > mainHeaderHeight);
     };
 
     window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Παρακολούθηση για αλλαγές στο pathname και scroll στο στόχο
+  // Intersection Observer to track visible section
   useEffect(() => {
-    if (location.pathname === '/' && targetSection) {
-      scroller.scrollTo(targetSection, {
-        duration: DURATION,
-        delay: 0,
-        smooth: true,
-        offset: OFFSET,
+    const observerOptions = { threshold: 0.6 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) setActiveSection(entry.target.id);
       });
-      setTargetSection(null); // Καθαρισμός του στόχου
-    }
-  }, [location, targetSection]);
+    }, observerOptions);
 
-  // Συνάρτηση για να πλοηγηθεί στην αρχική σελίδα και να κάνει scroll στο συγκεκριμένο section
+    sections.forEach((section) => {
+      const element = document.getElementById(section.id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const handleNavigateAndScroll = (sectionId) => {
     if (location.pathname !== '/') {
-      setTargetSection(sectionId); // Ορισμός του section ως στόχος
-      navigate('/'); // Πλοήγηση στην αρχική σελίδα
+      navigate('/');
+      setTimeout(() => {
+        scroller.scrollTo(sectionId, {
+          duration: DURATION,
+          delay: 0,
+          smooth: true,
+          offset: OFFSET,
+        });
+      }, 500);
     } else {
-      // Αν βρισκόμαστε ήδη στην αρχική σελίδα
       scroller.scrollTo(sectionId, {
         duration: DURATION,
         delay: 0,
@@ -70,54 +78,55 @@ const Header = () => {
       <header className="header" id="arxikh">
       
           
-        <nav className="navbar">
-          <div className="logo">
+      <nav className="navbar">
+        <div className="logo">
+          <a onClick={() => handleNavigateAndScroll('arxikh')}>
+            <img src="/logo-final-removebg-preview.png" alt="Logo" />
+          </a>
+        </div>
+
+        <ul className={`nav-links ${isBurgerOpen ? 'open' : ''}`}>
+          <li>
             <a onClick={() => handleNavigateAndScroll('arxikh')}>
-              <img src="/logo-final-removebg-preview.png" alt="Logo" />
+              Αρχική
             </a>
-          </div>
+          </li>
+          <li  className={`dropdown ${isSubmenuOpen ? 'active' : ''}`}
+              onMouseEnter={() => setIsSubmenuOpen(true)}
+              onMouseLeave={() => setIsSubmenuOpen(false)}>
+            <a onClick={() => handleNavigateAndScroll('services')}>
+              Υπηρεσίες +
+            </a>
+            <div className="dropdown-buffer"></div>
+            <ul className="dropdown-content">
+              <li><a href="/individual-therapy">Ατομική Θεραπεία</a></li><hr />
+              <li><a href="/group-therapy">Ομαδική Θεραπεία</a></li><hr />
+              <li><a href="/online-therapy">Online συνεδρίες</a></li><hr />
+              <li><a href="/home-therapy">Κατ'οίκον συνεδρίες</a></li><hr />
+              <li><a href="/family-therapy">Θεραπεία Ζεύγους/Οικογενειακή Θεραπεία</a></li><hr />
+              <li><a href="/test-therapy">Ψυχολογικές Αξιολογήσεις</a></li><hr />
+              <li><a href="/old-therapy">Ψυχολογική Υποστήριξη για Ηλικιωμένους</a></li><hr />
+              <li><a href="/child-therapy">Παιδοψυχολογία και Θεραπεία Παιδιών/Εφήβων</a></li>
+            </ul>
+          </li>
+          <li><a onClick={() => handleNavigateAndScroll('biography')}>Βιογραφικό</a></li>
+          <li><a href='/articles'>Άρθρα</a></li>
 
-          <ul className={`nav-links ${isBurgerOpen ? 'open' : ''}`}>
-            <li>
-              <a onClick={() => handleNavigateAndScroll('arxikh')}>
-                Αρχική
-              </a>
-            </li>
-            <li className="dropdown">
-              <a onClick={() => handleNavigateAndScroll('services')}>
-                Υπηρεσίες +
-              </a>
-              <div className="dropdown-buffer"></div>
-              <ul className="dropdown-content">
-                <li><a href="/individual-therapy">Ατομική Θεραπεία</a></li><hr />
-                <li><a href="/group-therapy">Ομαδική Θεραπεία</a></li><hr />
-                <li><a href="/online-therapy">Online συνεδρίες</a></li><hr />
-                <li><a href="/home-therapy">Κατ'οίκον συνεδρίες</a></li><hr />
-                <li><a href="/family-therapy">Θεραπεία Ζεύγους/Οικογενειακή Θεραπεία</a></li><hr />
-                <li><a href="/test-therapy">Ψυχολογικές Αξιολογήσεις</a></li><hr />
-                <li><a href="/old-therapy">Ψυχολογική Υποστήριξη για Ηλικιωμένους</a></li><hr />
-                <li><a href="/child-therapy">Παιδοψυχολογία και Θεραπεία Παιδιών/Εφήβων</a></li>
-              </ul>
-            </li>
-            <li><a onClick={() => handleNavigateAndScroll('biography')}>Βιογραφικό</a></li>
-            <li><a href='/articles'>Άρθρα</a></li>
+          <li><a onClick={() => handleNavigateAndScroll('faq')}>FAQ</a></li>
+          <li><a onClick={() => handleNavigateAndScroll('contact')}>Επικοινωνία</a></li>
+          <li>
+            <a onClick={() => handleNavigateAndScroll('booking')}>
+              Ραντεβού
+            </a>
+          </li>
+        </ul>
+      
+      
+      </nav>
+      
+    </header>
 
-            <li><a onClick={() => handleNavigateAndScroll('faq')}>FAQ</a></li>
-            <li><a onClick={() => handleNavigateAndScroll('contact')}>Επικοινωνία</a></li>
-            <li>
-              <a onClick={() => handleNavigateAndScroll('booking')}>
-                Ραντεβού
-              </a>
-            </li>
-          </ul>
-        
-        
-        </nav>
-        
-      </header>
-
-
-      <header className={`sticky-header ${isSticky ? 'active' : ''}`}>
+    <header className={`sticky-header ${isSticky ? 'active' : ''}`}>
         <div className="sticky-navbar">
           <div className="logo2">
             <a onClick={() => handleNavigateAndScroll('arxikh')}>
