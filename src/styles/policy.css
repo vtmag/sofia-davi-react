@@ -1,0 +1,91 @@
+/* Γενικές ρυθμίσεις */
+.policy-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    background-color: #f9f9f9; /* Απαλό φόντο */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Απαλή σκιά */
+  }
+  
+  .policy-container h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333; /* Σκούρο γκρι */
+    text-align: center; /* Κέντρο ο τίτλος */
+    font-weight: bold;
+  }
+  
+  .policy-container h2 {
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #7a7953; /* Μπλε χρώμα για τίτλους */
+  }
+  
+  .policy-container p, 
+  .policy-container li {
+    line-height: 1.6;
+    font-size: 16px;
+    color: #555; /* Ανοιχτό γκρι κείμενο */
+    margin-bottom: 15px;
+  }
+  
+  .policy-container ul {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  
+  .policy-container a {
+    color: #007BFF; /* Χρώμα για τα links */
+    text-decoration: underline;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .policy-container a:hover {
+    color: #0056b3; /* Χρώμα hover για τα links */
+    text-decoration: none; /* Κατάργηση υπογράμμισης στο hover */
+  }
+  
+  /* Στυλ για τα κουμπιά (αν έχεις) */
+  .policy-container .button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .policy-container .button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Μικρότερες συσκευές */
+  @media screen and (max-width: 768px) {
+
+    .policy-container {
+      padding: 15px;
+      margin: 12px;
+      
+    }
+  
+    .policy-container h1 {
+      font-size: 28px;
+    }
+  
+    .policy-container h2 {
+      font-size: 20px;
+    }
+  
+    .policy-container p, 
+    .policy-container li {
+      font-size: 14px;
+    }
+  }
+  

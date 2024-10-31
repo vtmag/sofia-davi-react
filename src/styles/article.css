@@ -1,0 +1,298 @@
+/* src/styles/ArticlesList.css */
+
+
+body {
+    font-family: 'Noto Serif', serif;
+    
+    padding: 0;
+   
+    overflow-x: hidden;
+  }
+
+  #hh1{
+    text-align: center;
+  }
+.articles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    
+    overflow-x: hidden;
+    padding: 20px;
+    margin: 0 auto;
+    overflow-x: hidden;
+    width: 80%;
+  }
+
+  .head{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0px; /* Space between elements */
+    align-items: center;
+  }
+
+ 
+
+  .head img{
+   flex: 1;
+  }
+
+  @media (max-width: 768px) {
+ 
+    .article-text h2{
+        text-align: left;
+    }
+
+    .article-text p{
+        text-align: left;
+    }
+    .article-image img {
+        width: 130px !important;
+        height: auto;
+        
+        border-radius: 8px;
+      }
+  }
+
+
+
+  
+  .article-preview {
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .articlesList{
+    overflow-x: hidden;
+  }
+  
+  
+  .article-preview:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .article-text {
+    flex: 1;
+    margin-right: 20px;
+    
+    
+  }
+  
+  .article-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    
+    
+  }
+  
+  .article-text p {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .article-image img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    
+  }
+  
+  .read-more {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #0077b5;
+    text-decoration: none;
+  }
+  
+  .read-more:hover {
+    text-decoration: underline;
+  }
+  
+  
+  /* src/styles/ArticlePage.css */
+
+.article-page {
+    max-width: 900px;
+    margin: 0 auto;
+    overflow-x: hidden;
+        
+        
+        font-family: 'Georgia', serif;
+        line-height: 1.8;
+        
+      
+    padding: 20px;
+  }
+  
+  
+  .article-page h1 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .article-page p {
+    line-height: 1.6;
+    font-size: 18px;
+    color: #555;
+    text-align: justify;
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif;
+  }
+  
+  .article-page a {
+    color: #0077b5;
+    text-decoration: none;
+  }
+  
+  .article-page a:hover {
+    text-decoration: underline;
+  }
+
+  .article-page ul{
+   list-style: decimal;
+  }
+
+  .article-page ul li{
+    text-align: left;
+    font-size: 1.2em;
+  }
+   
+  .article-page img{
+    width: 400px;
+    margin: 0 auto;
+    
+  
+  }
+
+  
+
+  .flex-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+  }
+  .article-image {
+    flex-shrink: 0;
+    width: 150px;
+  }
+  
+  .article-text {
+    flex: 1;
+  }
+
+  /* src/styles/article.css */
+
+.article-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+  }
+  
+  .nav-button {
+    color: #7c7755;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  
+  .nav-button:hover {
+    
+    transform: scale(1.03);
+  }
+
+  /* Placeholder styling */
+.nav-placeholder {
+    width: 48%; /* Width similar to nav buttons for alignment */
+  }
+
+  
+  /* src/styles/ArticlesList.css and src/styles/ArticlePage.css */
+
+@media (max-width: 768px) {
+    .articles-list ul li {
+      padding: 15px;
+    }
+    .flex-container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0px;
+      }
+  
+    .article-page h1 {
+      font-size: 28px;
+    }
+
+    .article-page h2{
+        text-align: left;
+    }
+  
+    .article-page p {
+      font-size: 16px;
+      text-align: justify;
+    }
+
+    .article-page img{
+        width: 400px;
+      }
+
+      .article-preview h2{
+        text-align: left;
+      }
+
+      .article-preview p{
+        text-align: justify;
+      }
+  }
+  
+  .publication-date {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .sources {
+    margin-top: 30px;
+  }
+  
+  .sources h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .sources ul {
+    list-style: none;
+    padding: 0px;
+    
+  }
+  
+  .sources li {
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 1em;
+  }
+  
+  .sources a {
+    color: #7c7755;
+    text-decoration: none;
+  }
+  
+  .sources a:hover {
+    text-decoration: underline;
+  }

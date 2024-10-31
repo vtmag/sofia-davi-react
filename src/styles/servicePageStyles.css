@@ -1,0 +1,168 @@
+.service-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 40px;
+    font-size: 1.2em;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .pi{
+    font-size: 1.2em;
+  }
+
+  #h1 {
+    font-size: 2.6em;
+    color: #7c7755;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid #dbd7bf;
+    padding-bottom: 10px;
+    max-width: 100%;
+}
+
+ #h2 {
+    font-size: 1.9em;
+    color: #7c7755;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    /* text-align: left; */
+    width: 100%;
+}
+  
+  .service-header {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .service-content {
+    line-height: 1.8;
+    font-size: 1.1rem;
+  }
+  
+  .service-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    border-radius: 8px;
+  }
+  
+  .prev-service, .next-service {
+    color: #7c7755;
+    padding: 0 12px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Container for the list to control alignment */
+.benefits-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns the list items to the left */
+    padding: 20px;
+}
+
+/* General Styles for the List */
+.animated-list {
+   
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between items */
+    width: 100%;
+}
+
+/* Styles for each List Item */
+.animated-list li {
+  
+    background-color: #ffffff; /* White background for contrast */
+    padding: 15px 20px;
+    border-radius: 8px;
+    list-style: none; /* Removes bullet points */
+    margin-left: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-size: 1.1em;
+    color: #333;
+    opacity: 1;
+    transform: translateX(-20px); /* Slightly offset to the left */
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out; /* Smooth appearance */
+    cursor: pointer;
+    border-left: 4px solid #7c7755; /* Accent border for visual interest */
+}
+
+
+
+/* Optional Hover Effect */
+.animated-list li:hover {
+    background-color: #f7f5ed; /* Light hover effect */
+    transform: translateX(5px); /* Slight move on hover */
+}
+
+.service-page p{
+  text-align: justify;
+}
+
+.animated-list h4{
+  text-align: left;
+}
+
+@media screen and (max-width: 480px) {
+    body {
+      font-size: 12px; /* Μικρότερη γραμματοσειρά για πολύ μικρές συσκευές */
+    }
+  
+    h1 {
+      font-size: 1.8rem;
+    }
+  
+    h2 {
+      font-size: 1.6rem;
+    }
+
+    #h2{
+      font-size: 1.5em;
+      text-align: left;
+    }
+  
+    p {
+      font-size: 1rem;
+      
+    }
+
+    .service-page p{
+      text-align: justify;
+    }
+
+    .animated-list h4{
+      text-align: left;
+    }
+
+    .animated-list li {
+  
+      background-color: #ffffff; /* White background for contrast */
+      padding: 15px 20px;
+      border-radius: 8px;
+      list-style: none; /* Removes bullet points */
+      margin-left: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+      font-size: 1.1em;
+      color: #333;
+      opacity: 1;
+      border-left: 4px solid #7c7755; /* Accent border for visual interest */
+  }
+
+  
+
+    .service-page{
+      margin: 20px;
+      padding: 20px;
+    }
+  }

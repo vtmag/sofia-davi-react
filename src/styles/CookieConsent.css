@@ -1,0 +1,81 @@
+/* Cookie Consent Banner */
+.cookie-consent-banner {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #7a7953;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-width: 300px;
+    opacity: 0.85;
+    font-family: 'Arial', sans-serif;
+ transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Smooth animation */
+ box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  
+@media (max-width: 768px) {
+    .cookie-consent-banner {
+       margin-left:40px;
+       margin-right:20px;
+        opacity: 0.9;
+      margin-bottom: 70px;
+        max-width: 90%; /* Μειώνουμε το πλάτος για καλύτερη εμφάνιση σε μικρές οθόνες */
+    }
+    .cookie-consent-banner.hide {
+        transform: translateY(100%); /* Μετακίνηση του banner εκτός οθόνης προς τα κάτω */
+        opacity: 0; /* Μείωση της διαφάνειας για να κρυφτεί σταδιακά */
+      }
+
+}
+
+  .cookie-consent-banner:hover{
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  .cookie-consent-banner .cookie-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .cookie-consent-banner p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .cookie-consent-banner a {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+  
+  .cookie-consent-banner a:hover {
+    color: #fff;
+  }
+  
+  .accept-btn {
+    background-color: #ffffff;
+    color: #7a7953;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .accept-btn:hover {
+    background-color: #bbb430;
+    color: #ffffff;
+
+  }
+
+  .cookie-consent-banner.hide {
+    transform: translateY(100%); /* Μετακίνηση του banner εκτός οθόνης προς τα κάτω */
+    opacity: 0; /* Μείωση της διαφάνειας για να κρυφτεί σταδιακά */
+  }
+  

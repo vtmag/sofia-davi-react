@@ -1,0 +1,2173 @@
+
+
+body {
+    font-family: 'Noto Serif', serif;
+    margin: 0;
+    padding: env(safe-area-inset);
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    overflow-x: hidden;
+  }
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  button, a {
+    outline: none;
+    -webkit-tap-highlight-color: transparent; /* Αφαιρεί το γκρι περίγραμμα σε κινητές συσκευές */
+  }
+  
+  
+
+
+  /* body {
+    background: linear-gradient(270deg, #666, #919090, #b7b6b6, #c5c4c4, #f3f2f2);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+  }
+  
+  @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+   */
+
+
+.header {
+    background: linear-gradient(135deg,  #FFFFFF, #7a7953);
+    /* 749b92 */
+    width: 100%;
+    padding: 3px 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    /* min-height: 100vh; */
+   
+}
+a {
+    outline: none; /* Αφαιρεί το περίγραμμα */
+  }
+  
+  a:focus {
+    outline: none;
+    box-shadow: none; /* Αφαιρεί το αχνό περίγραμμα ή οποιαδήποτε σκιά */
+  }
+  
+  a:active {
+    outline: none;
+    box-shadow: none; /* Αφαιρεί τη σκιά κατά το πάτημα */
+  }
+  
+
+
+.profile {
+    text-align: center; 
+    margin-bottom: 10px; 
+}
+
+.booking-section {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.booking-section h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+
+.booking-section p {
+    margin-bottom: 40px;
+    color: #666;
+}
+
+
+.title {
+    font-size: 1.2em;
+    color: #323232; 
+    margin: 0; 
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    
+    font-style: normal;
+    white-space: nowrap;
+    
+    width:32ch; 
+    letter-spacing: 0.15em;
+    border-right: none; /* Αφαιρεί το σταθερό κέρσορα */
+    animation: typing 2s steps(40, end);
+    
+}
+.burger.open ~ .title-to-hide {
+    display: none; /* Hide title when burger menu is open */
+}
+
+
+
+.burger-menu.open ~ .title {
+    display: none; /* Ή opacity: 0; για ομαλή μετάβαση */
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 0px;
+    
+    
+}
+
+.navbar .logo {
+    font-size: 1.5em;
+    margin-left: 10px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    font-size: 1.3em;
+    gap: 15px;
+    
+}
+
+.navbar ul.active {
+    display: flex; /* This should be here to activate the menu */
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 540;
+    display: block;
+    
+}
+
+.navbar ul li a:hover {
+    color: #373636;
+    transform: translateX(5px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+.main-heading {
+    font-size: 2.5em;
+    font-family: 'Noto Serif', serif;
+    color: #7a7953;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2), -1px -1px 2px rgba(255, 255, 255, 0.5);
+    font-style: normal;
+    line-height: 0.5;
+    margin-top: 0;
+    animation: slideInDown 1s ease-in-out;
+}
+
+.logo img {
+    max-width: 300px; 
+    
+}
+
+/* Burger Menu Styles */
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+    transition: all 0.8s ease;
+}
+
+.booking-section h3{
+    margin-bottom: 0;
+    color: #505050;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1000px) {
+
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0;
+        opacity: 0;
+        background-color: #5C9EAD;
+        text-align: center;
+        padding: 20px 0;
+        margin: 0;
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .navbar ul li {
+        margin: 15px 0;
+    }
+    .header {
+        
+        padding-top: 12px;
+        padding-left: 0px;
+        
+       
+    }
+
+    .logo img {
+        max-width: 250px; /* Adjust the size as needed */
+        
+    }
+    
+/* General styles for burger and links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+  }
+  
+  .burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+
+  /* Sticky header */
+  .sticky-header {
+    position: fixed;
+    top: -100px;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: top 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    opacity: 0;
+  }
+  
+  .sticky-header.active {
+    top: 0;
+    opacity: 0.9;
+  }
+  
+  
+
+
+ 
+  
+    .burger {
+        position: fixed;
+        right: 0;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        z-index: 15000;
+        transition: all 0.3s ease;
+    }
+
+    .navbar {
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .header{
+        width: 100%;
+    }
+
+   
+
+  .sticky-header .nav-links {
+    display: none;
+  }
+
+   .sticky-burger-menu {
+    display: block;
+  }
+}
+
+
+@media screen and (max-width: 768px){
+    .service-grid{
+        width: auto;
+        padding: 0px;
+        transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    }
+
+   
+    .service-card{
+        margin: 0;
+        height: auto;
+        transition: opacity 0.5s ease-in-out;
+        width: 20%;
+    }
+
+    .services-section{
+        padding: 0;
+    }
+   
+}
+
+
+
+
+/* Section Styles */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+    
+    min-height: 100vh;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+
+
+.services-section {
+    background-color: #FFFFFF;
+    margin-right: 0;
+}
+
+
+.about-section h2{
+    font-style: normal;
+}
+.about-section {
+    background-color: #F0F4F8;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* Toggle Switch Styling */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196f3;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+/* Media query για οθόνες μεγαλύτερες από 1280px (17 ίντσες) */
+@media screen and (min-width: 1800px) {
+    .about-section {
+        padding-top: 200px;
+        padding-bottom: 200px;
+    }  
+}
+
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0px; /* Space between elements */
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.about-text {
+    flex: 1 ; 
+    min-width: 300px;
+    padding: 20px;
+    font-size: 1.2em;
+    color: #333;
+    font-style: normal;
+    text-align: justify;
+    padding-right: 80px;
+    line-height: 1.8;
+}
+
+.about-photo img {
+    max-width: 350px;
+    height: auto;
+    border-radius: 50%; /* Make the image circular */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    /* transition: transform 0.3s ease; */
+}
+
+
+
+
+/* .about-photo img:hover {
+    transform: scale(1.05);
+} */
+
+.services-section {
+    /* background-image: url('/public/demo2.jpg'); */
+    background-image: 
+    linear-gradient(120deg, rgba(124, 119, 85, 0.5) 50%, transparent 50%),
+    linear-gradient(240deg, rgba(124, 119, 85, 0.5) 50%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(124, 119, 85, 0.3) 10%, transparent 60%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+   
+}
+
+.services-section h2 {
+    font-size: xx-large;
+    text-align: center;
+    color: #333;
+}
+
+.services-grid {
+    
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 στήλες σε ευρύτερες οθόνες */
+    gap: 20px;
+    margin-bottom: 90px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.service-card {
+    background: #eeeeed;
+    padding: 35px;
+    margin-bottom: 20px;
+    opacity: 0.7;
+    transition: opacity 0.5s ease-in-out;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+  backdrop-filter: blur(10px); /* Adds the blur effect */
+
+  -webkit-backdrop-filter: blur(10px); /* Support for Safari */
+}
+
+.service-card h3 {
+    color: #333;
+    font-size: 1.5em;
+    margin: 0;
+    padding-bottom: 5px;
+    line-height: 1.6;
+}
+
+.service-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 10px 0 20px 0;
+    color: #555;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    opacity: 1;
+}
+
+/* "Μάθετε Περισσότερα" κουμπί */
+.learn-more-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 20px;
+    background-color: #7a7953;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    background-color: #54503a;
+    transform: scale(1.05);
+}
+
+/* Απόκρυψη κουμπιού και εφέ */
+.service-card .learn-more-btn {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+.service-card:hover .learn-more-btn {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Responsive Styling */
+
+/* 3 στήλες σε οθόνες μέχρι 1200px */
+@media (max-width: 1300px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+
+/* 1 στήλη σε οθόνες μέχρι 480px */
+@media (max-width: 770px) {
+    body{
+        padding: 0;
+        margin: 0;
+    }
+    .App{
+        margin: 0;
+        padding: 0;
+    }
+    .services-grid {
+        grid-template-columns: 1fr;
+        margin: 0;
+        height: auto;
+        width: auto;
+        max-height: 1200px; /* Αρχικό ύψος για εμφάνιση των πρώτων υπηρεσιών */
+  transition: max-height 1s ease; /* Smooth άνοιγμα/κλείσιμο */
+        padding: 0;
+    }
+
+    .services-grid.show-all {
+        max-height: 4200px; /* Ένα μεγάλο ύψος για να εμφανιστούν όλες οι υπηρεσίες */
+      }
+
+    /* Κεντράρισμα και διόρθωση μεγέθους κάρτας για κινητά */
+    .service-card {
+        opacity: 1;
+        padding: 20px;
+        margin: 5px auto; /* Τοποθέτηση στο κέντρο */
+        width: 80%; /* Μείωση του πλάτους της κάρτας για κινητές συσκευές */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card h2{
+        margin-bottom: 0px;
+    }
+    .download-button{
+        margin: auto;
+    }
+    
+  
+    /* Στα κινητά, το κουμπί "Μάθετε Περισσότερα" είναι πάντα ορατό */
+    .service-card .learn-more-btn {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        font-size: 1.5em;
+    }
+    
+}
+
+
+
+/* Contact Section */
+.contact-section {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 60px;
+    padding-right: 70px;
+}
+
+.contact-section h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-info{
+    padding-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 1.1em;
+    color: #7a7953;
+    margin-bottom: 5px;
+}
+
+.contact-info a {
+    color: #7a7953;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #7a7953;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+
+
+.minimal-form input,
+.minimal-form textarea {
+  width: 100%;
+  padding: 15px 20px; /* Προσθήκη ίσου padding δεξιά και αριστερά */
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f7f7f7;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+.minimal-form input:focus,
+.minimal-form textarea:focus {
+  border-color: #999;
+  outline: none;
+}
+
+.minimal-form textarea {
+  height: 150px;
+  resize: none;
+}
+
+.submit-btn {
+  width: 107%;
+  padding: 15px;
+  background-color: #333;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  border: none;
+  
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #555;
+}
+  
+  .success-message {
+    color: #28a745;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 40px 15px;
+        
+        max-width: 100%;
+    }
+
+    .contact-info p{
+        text-align: center;
+        font-size: 1.5em;
+        
+    }
+
+    .therapy-link {
+        margin-top: 40px;
+        font-size: 1rem;
+       
+        
+    }
+
+    .about-section{
+        padding-top: 35px;
+    }
+
+    .minimal-form input,
+.minimal-form textarea {
+    width: 82%;
+    
+}
+
+.submit-btn{
+    width: 100%;
+}
+label{
+    font-size: 1.5em;
+}
+}
+
+
+/* Focus styles */
+
+
+.cta1-button{
+    background-color: #7a7953;
+    font-family: 'Noto Serif', serif;
+    font-size: medium;
+    color: #FFF;
+    padding: 15px;
+    margin-top: 25px;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta1-button:hover{
+    background-color: #a59e71;
+}
+
+
+/* Footer */
+footer {
+   text-align: center;
+  padding: 40px 20px;
+  background-color: #f2f2f2;
+  color: #f2f2f2;
+  font-size: 1.1rem;
+  border-top: 1px solid #e0e0e0;
+}
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+.footer-menu {
+    margin-top: 15px;
+}
+footer p{
+    color: #5e5e5e;
+
+}
+
+.footer-menu ul {
+    list-style: none;
+    padding: 0;
+    display: block;
+    gap: 15px;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+}
+
+.footer-menu ul li {
+    margin: 5px 10px;
+}
+
+.footer-menu ul li a {
+    color: #7a7953;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease, transform 0.3s ease; /* Προσθήκη transition για το scale */
+    display: inline-block; /* Αλλαγή σε inline-block για να λειτουργήσει το transform */
+}
+
+.footer-menu ul li a:hover {
+    cursor: pointer;
+    color: #57562b; /* Change to a hover color */
+    transform: scale(1.08); /* Εφαρμογή του scale στο hover */
+}
+
+
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    fill: #7a7953; /* Αρχικό χρώμα των εικονιδίων */
+    transition: fill 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    fill: #7a7953; /* Χρώμα όταν το ποντίκι είναι πάνω από το εικονίδιο (για LinkedIn) */
+  }
+  
+  /* Χρώματα ανά εικονίδιο */
+  .linkedin-icon:hover {
+    fill: #0077b5; /* Χρώμα LinkedIn */
+  }
+  
+  .facebook-icon:hover {
+    fill: #1877f2; /* Χρώμα Facebook */
+  }
+  
+
+.hover-animate {
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+    text-decoration: none;
+    color: #7a7953;
+}
+
+.hover-animate:hover {
+    transform: translateX(5px); 
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; 
+    padding: 20px 25px;
+    font-size: 16px;
+    background-color: #7a7953;
+    color: white;
+    border: none;
+    border-radius:30px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Αρχικά αόρατο */
+  visibility: hidden; /* Κρύβεται πλήρως */
+  transition: opacity 0.4s ease, visibility 0.4s ease; /* Ομαλή μετάβαση */
+  transition: background-color 0.3s ease;
+}
+
+#back-to-top.show {
+    opacity: 1; /* Εμφανίζεται με πλήρη διαφάνεια */
+    visibility: visible; /* Γίνεται ορατό */
+  }
+
+
+
+#back-to-top:hover {
+    background-color: #57543c;
+}
+
+.accessibility-icon {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    padding: 15px;
+    z-index: 1000;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.large-font {
+    font-size: 1.5em;
+}
+
+
+
+/* Animations */
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+        to {
+            width: 32ch; 
+        }
+    }
+    
+    @keyframes blink-caret {
+        from,
+        to {
+            border-color: transparent;
+        }
+        50% {
+            border-color: black;
+        }
+    }
+    
+}
+
+/* Disappear the caret */
+@keyframes disappear-caret {
+    to {
+        border-color: transparent;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    
+        * {
+            font-size: 1em;
+            text-align: center;
+            
+        }
+
+        .about-photo{
+            align-items: center;
+        }
+        .section{
+            width: 100%;
+            padding: 10px;
+            align-items: center;
+            
+        }    
+    form {
+        padding: 10px;
+        
+    }
+
+    h1{
+        text-align: left;
+    }
+
+    .contact-section{
+        margin: 10px;
+    }
+
+    .faq-section{
+        margin: 10px;
+        margin-top: 0px;
+        border-radius: 8px;
+        padding-left: 20px;
+    }
+    
+    .faq-item {
+        font-size: 1.3em;
+    }
+    
+
+    
+    .footer-menu li{
+        display: inline-block;
+        
+        
+    }
+
+  .footer-menu{
+    padding-bottom: 20px;
+  }
+
+  .image-content {
+    padding-top: 0;
+  }
+    .service-card .learn-more-btn {
+        opacity: 1;
+        visibility: visible;
+         
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    }
+   
+
+    .service-grid {
+        grid-template-columns: 1fr; 
+        
+    }
+
+    .title {
+        font-size: 1.2em !important;
+        white-space: normal;
+        word-break: break-word;
+    }
+  
+    .about-text{
+        padding-right: 20px;
+    }
+    .about-text p{
+        font-size: 1em;
+        text-align: justify;
+        
+    }
+    
+}
+.section {
+    background-color: #F0F4F8;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nav-links a {
+  color: #333; /* Default color */
+  transition: color 0.3s ease;
+}
+
+.nav-links a.active {
+  color: #0077b5; /* Highlight color for active section */
+}
+
+.sticky-header .nav-links a.active {
+  color: #9b9b9b; /* Ensure consistency in sticky header */
+}
+
+.bio-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 800px;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.bio-card:hover {
+    transform: scale(1.03);
+}
+
+.bio-text {
+    font-size: 1.2em;
+    color: #333;
+    line-height: 1.6;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.bio-text h3 {
+    font-size: 1.5em;
+    color: #5594a2;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.bio-text ul {
+    margin: 20px 0;
+    padding-left: 20px;
+    list-style-type: none;
+    transform: translateX(0);
+    transition: transform 0.4s ease;
+}
+
+.bio-text ul li {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    transition: transform 0.3s ease;
+}
+
+.bio-text ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #5594a2;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.bio-card:hover .bio-text ul li {
+    transform: translateX(5px);
+}
+
+.bio-text ul li:hover::before {
+    color: #333;
+}
+
+.bio-text ul li:hover {
+    transform: translateX(10px);
+}
+
+input:disabled,
+select:disabled,
+input[style*="color: #ccc"],
+select[style*="color: #ccc"] {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+}
+.faq-section {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; 
+    min-height: 100vh; 
+    background-color: #f0f0ec; 
+    padding: 50px; 
+    padding-bottom: 20px
+}
+
+.faq-section h2 {
+    text-align: center;
+    margin-bottom: 30px; 
+}
+.faq-item img{
+    max-width: 100px;
+}
+.faq-item {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    border: 1px solid #f0f0ec;
+    max-width: 800px; 
+    width: 100%; 
+}
+
+.faq-item h3 {
+    margin-bottom: 10px;
+    font-weight: lighter;
+}
+
+.faq-item p {
+    margin: 0;
+    opacity: 0;
+    height: 0;
+    transition: opacity 2s ease, height 2s ease;
+  }
+  
+  .faq-item.active p {
+    opacity: 1;
+    height: auto; /* Αφήνουμε το ύψος να προσαρμοστεί στο περιεχόμενο */
+  }
+
+.faq-item a {
+    color: #c7c46e; 
+    text-decoration: none; 
+}
+
+.faq-item a:hover {
+    text-decoration: underline; 
+}
+
+
+
+
+.faq-item {
+    margin-bottom: 20px;
+     transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+}
+
+.faq-item h3 {
+    font-size: 1.2em;
+    color: #7a7953;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.faq-item h3:hover {
+    color: #333;
+}
+
+.faq-item p {
+    font-size: 1em;
+    margin-top: 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.faq-item.active p {
+    padding-top: 10px;
+} 
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+footer nav ul li {
+    
+    margin: 0 10px;
+    display: inline;
+}
+
+footer nav ul li a {
+    color: #7a7953;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease; /* Προσθήκη transition για το scale */
+    display: inline-block; /* Αλλαγή σε inline-block για να λειτουργήσει το transform */
+}
+
+footer nav ul li a:hover {
+    color: #57562b; /* Change to a hover color */
+    transform: scale(1.08); /* Εφαρμογή του scale στο hover */
+}
+
+
+.navbar ul li {
+    position: relative;
+}
+
+
+
+/* Στυλ για το dropdown υπομενού */
+.dropdown-content {
+    display: block;
+    position: absolute;
+    margin-top: 5px;
+    opacity: 0; 
+    visibility: hidden; 
+    background-color: #adac8a;
+    min-width: 220px;
+    padding: 12px 18px;
+    padding-top: 15px;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    border: 1px solid #ddd;
+    border-radius: 4px; 
+    transition: opacity 0.3s ease, transform 0.3s ease; 
+}
+
+.dropdown-content li {
+    width: 100%;
+}
+
+.dropdown-content li a {
+   padding: 3px 12px;
+    color: #7a7953;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 18px;
+    border-bottom: 1px solid #f0e0e0; 
+}
+
+hr {
+    opacity: 0.9;
+    color: black;
+ }
+
+.dropdown-content li a:last-child {
+    border-bottom: none; 
+}
+
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 0.9; 
+    visibility: visible; 
+    height: auto; 
+    pointer-events: auto;
+
+
+}
+
+
+.dropdown-buffer {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 30px; /* Adjust the height to fit the gap */
+  }
+  
+  .biography {
+    background-color: #f7f7f7;
+    padding: 50px 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.biography {
+    background-color: #f7f7f7;
+    padding: 50px 20px;
+    font-family: 'Noto Serif', serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bio-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap; 
+}
+
+.text-content {
+    flex: 1;
+    min-width: 300px;
+    text-align: justify;
+}
+
+.image-content {
+    padding-top: 127px;
+    flex: 1;
+    min-width: 100px;
+    text-align: justify;
+   
+}
+
+.header{
+    width: auto;
+    /* border-bottom: 2px solid #f0f0ec; */
+}
+.services-section{
+    width: auto;
+    
+}
+
+.image-content img {
+    max-width: 100%;
+    height: 520px;
+    border-radius: 10px; 
+}
+
+.biography h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.biography h3 {
+    font-size: 1.5em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.biography p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+
+
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .about-content{
+        text-align: left;
+        
+    }
+
+
+    .bio-content {
+        flex-direction: column; /* Stacks the text and image on top of each other */
+        text-align: justify; /* Centers text on smaller screens */
+        font-size: 1.25em;
+    }
+
+    .text-content {
+        padding-right: 0; /* Removes padding on smaller screens */
+        text-align: justify; /* Centers text on smaller screens */
+    }
+
+.bio-content{
+    gap: 0;
+}
+
+
+        .image-content {
+            padding-top: 0px;
+            
+            
+        }
+        .image-content img {
+            height: 400px;
+            
+            
+        }
+    
+}
+
+
+
+
+.section1{
+    min-height: 100vh;
+}
+
+/* Sticky Header */
+.sticky-header {
+    position: fixed;
+    top: -100px; /* Initially above the viewport */
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: top 0.4s ease-in-out, opacity 0.4s ease-in-out; /* Smooth transition */
+    opacity: 0; /* Start hidden */
+}
+
+.sticky-header.active {
+    top: 0; /* Slide into view */
+    opacity: 0.9; /* Fade in */
+}
+
+
+
+.sticky-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo2 img {
+    height: 100px; /* Adjust according to your needs */
+}
+
+.nav-links a,
+.sticky-navbar a,
+.appointment-button a {
+  cursor: pointer; /* Αλλάζει τον cursor σε pointer */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 5px 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #7a7953;
+}
+
+.sticky-burger-menu {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+.appointment-button a {
+    text-decoration: none;
+    
+    color: #ffffff;
+    padding: 30px 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+.appointment-button:hover{
+    color: white;
+    
+}
+
+.cookie-consent {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.cookie-consent.show {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.cookie-consent p {
+    margin: 0;
+    display: inline-block;
+    font-size: 14px;
+    color: #ddd;
+}
+
+.cookie-consent a {
+    color: #7a7953;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cookie-consent a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.cookie-button {
+    background-color: #7a7953;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cookie-button:hover {
+    background-color: #4B8A9B;
+}
+
+
+
+/* .lang-flag {
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.lang-flag:hover {
+    transform: scale(1.1);
+} */
+
+/* Learn More Section Styles */
+.learn-more-section {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.container1 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.learn-more-section h1 {
+    font-size: 2.2em;
+    color: #7a7953;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid #E8F1F2;
+    padding-bottom: 10px;
+    max-width: 80%;
+}
+
+.learn-more-section h2 {
+    font-size: 1.6em;
+    color: #7a7953;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+    width: 100%;
+}
+
+.learn-more-section p, .learn-more-section ul {
+    font-size: 1.1em;
+    text-align: justify;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.learn-more-section ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.call-to-action {
+    text-align: center;
+    margin-top: 30px;
+    background-color: #e8e8d9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.call-to-action p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.cta-button {
+    background-color: #7a7953;
+    color: #fff;
+    padding: 15px 25px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+    background-color: #c9c78a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .learn-more-section {
+        padding: 40px 10px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .learn-more-section h1 {
+        font-size: 2em;
+    }
+
+    .learn-more-section h2 {
+        font-size: 1.4em;
+    }
+    
+
+    .cta-button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+    
+
+   
+}
+
+
+
+
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* General Styles for the List */
+/* Container for the list to control alignment */
+.benefits-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns the list items to the left */
+    padding: 20px;
+}
+
+/* General Styles for the List */
+.animated-list {
+   
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between items */
+    width: 100%;
+}
+
+/* Styles for each List Item */
+.animated-list li {
+    background-color: #ffffff; /* White background for contrast */
+    padding: 15px 20px;
+    border-radius: 8px;
+    list-style: none; /* Removes bullet points */
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-size: 1.1em;
+    color: #333;
+    opacity: 1;
+    transform: translateX(-20px); /* Slightly offset to the left */
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out; /* Smooth appearance */
+    cursor: pointer;
+    border-left: 4px solid #5C9EAD; /* Accent border for visual interest */
+}
+
+
+
+/* Optional Hover Effect */
+.animated-list li:hover {
+    background-color: #F0F4F8; /* Light hover effect */
+    transform: translateX(5px); /* Slight move on hover */
+}
+
+
+main{
+    font-size: 18px;
+}
+
+.accordion-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.accordion-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Add a subtle shadow */
+}
+
+.accordion-title {
+    background-color: #f7f7f7;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #333;
+    position: relative;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.accordion-title:hover {
+    background-color: #e0e0e0;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease;
+    padding: 0 15px;
+    background-color: #fff;
+    color: #555;
+    border-top: 1px solid #ddd; /* Optional: border between title and content */
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 200px; /* Adjust this value based on your content */
+    padding: 10px 15px;
+}
+
+.accordion-item.active {
+    border-color: #7a7953; /* Optional: Change border color when active */
+}
+
+.service-navigation {
+    margin: 20px 0;
+    padding: 20px 0;
+    background-color: #e8e8d9;
+    
+}
+
+.service-navigation h3 {
+    text-align: center;
+   
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+    padding: 0 10px; /* Add some padding to the container */
+}
+
+.prev-service, .next-service{
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+
+.prev-service:hover,
+.next-service:hover {
+    
+    transform: scale(1.05);
+}
+
+.therapy-finder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 0; /* Adds spacing above and below the link */
+    text-align: center; /* Ensures the content is centered */
+}
+
+.therapy-link {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #7a7953;
+    color: #fff;
+    font-size: 1.3em;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.therapy-link:hover {
+    background-color: #a5a485;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.therapy-link:active {
+    background-color: #a5a485;
+    transform: translateY(1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+
+.download-button {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: 2px solid #7a7953;
+    border-radius: 50px;
+    background-color: white;
+    color: #7a7953;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #7a7953;
+    color: white;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+
+#accessibility-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+    background-color: #7a7953;
+    width: 60px;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+  }
+  
+  #accessibility-btn:hover {
+    background-color: #dcd397;
+  }
+  
+  #accessibility-panel {
+    position: fixed;
+    bottom: 88px;
+    left: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    z-index: 1001;
+    display: none; /* Αρχικά κρυφό */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  #accessibility-panel.active {
+    display: block;
+    
+  }
+  
+  .accessibility-option {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .accessibility-option:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Δημιουργεί responsive grid */
+    gap: 20px; /* Απόσταση ανάμεσα στα βίντεο */
+    padding: 20px;
+  }
+  
+  .instagram-grid iframe {
+    width: 100%; /* Κάνει τα βίντεο να είναι πλήρους πλάτους μέσα στα κελιά του grid */
+    height: 600px; /* Ύψος των βίντεο, μπορείς να το προσαρμόσεις ανάλογα */
+    border-radius: 10px; /* Ελαφρώς στρογγυλεμένες γωνίες για πιο όμορφη εμφάνιση */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Σκιά για όμορφο εφέ */
+    border: none;
+  }
+  
+
+  #a {
+    color: #7c7755; /* Γκρι-μπεζ χρώμα για τα links */
+    text-decoration: none; /* Αφαίρεση της υπογράμμισης */
+    font-weight: bold; /* Το link φαίνεται πιο τονισμένο */
+    transition: color 0.3s ease, border-bottom 0.3s ease; /* Ομαλές μεταβάσεις */
+    border-bottom: 2px solid transparent; /* Προσθήκη διακριτικής γραμμής */
+  }
+  
+  #a:hover {
+    color: #a19c7f; /* Χρώμα hover (ροζ) */
+    border-bottom: 2px solid #a19c7f; /* Γραμμή στο κάτω μέρος κατά το hover */
+  }
+  
+  
+  
+  #a:active {
+    color: #333333; /* Πιο σκούρο χρώμα όταν το link είναι ενεργό */
+    border-bottom: 2px solid #333333; /* Πιο σκούρα γραμμή όταν είναι ενεργό */
+  }
+
+  /* Social icons styling */
+.social-icons1 {
+    display: flex;
+    gap: 20px;
+    margin-top: 0;
+    justify-content: flex-end;
+    
+  }
+  
+  .social-icons1 a {
+    color: #7a7953; /* Default icon color */
+    font-size: 19px; /* Size of the icons */
+    padding: 1px 12px;
+    border-radius: 50%;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease; /* Add smooth transition for color, background, and scale */
+}
+
+.social-icons1 a:hover {
+    color: #d5d5d5; /* Change icon color on hover */
+    background-color: #0077b5; /* Background color change on hover */
+    border-radius: 50%;
+    
+}
+
+  /* Διαφορετικό μέγεθος εικονιδίων για μικρές οθόνες */
+  @media (max-width: 768px) {
+    .social-icons1 {
+        justify-content: flex-start;
+    }
+    .social-icons1 a {
+        justify-content: flex-start;
+      font-size: 20px; /* Μειώνουμε το μέγεθος των εικονιδίων για μικρές οθόνες */
+    }
+  }
+  
+  /* Style the Calendly iframe container */
+.booking-section iframe {
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+    margin: 0 auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Optional Loading Spinner */
+  .iframe-container {
+    position: relative;
+  }
+  
+  .iframe-container iframe {
+    margin-top: 20px;
+    display: none;
+  }
+  
+  .iframe-container.loading iframe {
+    display: block;
+  }
+  
+  .loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #5c9ead;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .iframe-container {
+      width: 95%; /* 100% width only on mobile screens */
+      margin: 0 auto;
+    }
+  }
+  
+  .time-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+    color: #7a7953; /* Match your website's color palette */
+    margin-top: 15px;
+  }
+
+  .time-section p{
+    padding-bottom: 0px;
+    margin-bottom: 5px;
+  }
+  
+  .clock {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 0px;
+    color: #7a7953;
+  }
+
+ 
+/* See More button styling */
+.see-more-btn {
+    display: block;
+    margin: 50px auto;
+    border: 1px solid #7a7953 ;
+    padding: 10px 20px;
+  
+    color: #7a7953;
+    margin-bottom: 0;
+    border-radius: 5px;
+    font-family: serif;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+
+  
+ 
+  
+  @media (min-width: 1024px) {
+   
+  
+    .see-more-btn {
+      display: none; /* Hide the "See More" button on larger screens */
+    }
+  }
+  
+  
+
+  
