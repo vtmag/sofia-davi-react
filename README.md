@@ -45,11 +45,11 @@ This project is a responsive application built with React. It provides comprehen
 - **Calendly**: Embedded widget for direct booking of appointments.
   - Integrated in the `Booking` component, linking directly to Sofia Davi’s Calendly profile.
 
+- **Dynamic Data Loading**
+
+    Some sections, like articles and metadata, are dynamically populated through structured JSON data files located in `src/data`. This approach allows easier management and updating of content without modifying the core components. Metadata for SEO, article contents, and other relevant information are managed in these data files.
+
 ---
-
-## Dynamic Data Loading
-
-Some sections, like articles and metadata, are dynamically populated through structured JSON data files located in `src/data`. This approach allows easier management and updating of content without modifying the core components. Metadata for SEO, article contents, and other relevant information are managed in these data files.
 
 ### Example of Dynamic Data Usage
 
@@ -125,7 +125,6 @@ Some sections, like articles and metadata, are dynamically populated through str
     ```bash
     npm start
 
-    To stop the server, use Ctrl + C in the terminal where the command was run.
 
 ## Usage
 
@@ -144,7 +143,6 @@ Here are potential future improvements to enhance the application:
 
 - **Blog Integration**: Adding a CMS-based blog system (e.g., Contentful, Strapi) for easy content management by non-developers.
 - **User Authentication**: Allowing clients to create accounts, view appointment history, and manage their profiles.
-- **Enhanced Analytics**: Integrating analytics tools (e.g., Google Analytics, Mixpanel) to gain insights into visitor behavior and improve user experience.
 - **Additional Accessibility Options**: Expanding accessibility settings to include options like high-contrast mode, screen reader support, and keyboard navigation for full compliance with WCAG standards.
 
 ## Acknowledgments
