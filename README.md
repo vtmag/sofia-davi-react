@@ -47,14 +47,10 @@ This project is a responsive application built with React. It provides comprehen
 
 - **Dynamic Data Loading**
 
-    Some sections, like articles and metadata, are dynamically populated through structured JSON data files located in `src/data`. This approach allows easier management and updating of content without modifying the core components. Metadata for SEO, article contents, and other relevant information are managed in these data files.
+    Some sections, like articles and metadata, are dynamically populated through structured JSON data files located in `src/data`. This approach allows easier management and updating of content without modifying the core components. Metadata for SEO, article contents, and other relevant information are managed in these data files. Examples:
 
----
-
-### Example of Dynamic Data Usage
-
-- **Articles**: Stored in `articlesData.js`, dynamically imported to the `ArticlePage` component.
-- **SEO Metadata**: Structured in `metadata.js` and applied across pages using `React Helmet` for dynamic title and meta description tags.
+    - Articles: Stored in `articlesData.js`, dynamically imported to the `ArticlePage` component.
+    - SEO Metadata: Structured in `metadata.js` and applied across pages using `React Helmet` for dynamic title and meta description tags.
 
 ---
 
